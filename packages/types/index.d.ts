@@ -3,6 +3,5 @@ export namespace Responses {
     name: string;
     version: string;
     environment: string;
-    stage: string;
   }
 }

@@ -13,7 +13,6 @@ export class AppController {
       name: app.name,
       version: app.version,
       environment: process.env.NODE_ENV,
-      stage: process.env.STAGE,
     };
   }
 
