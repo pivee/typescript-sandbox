@@ -102,7 +102,7 @@ importers:
         specifier: ^5.0.0
         version: 5.0.2
 
-  apps/nextjs-web-app:
+  apps/nextjs-web-application:
     dependencies:
       next:
         specifier: ^13.4.1
@@ -134,7 +134,7 @@ importers:
         version: link:../../packages/tsconfig
       typescript:
         specifier: ^4.5.3
-        version: 4.9.5
+        version: 4.7.4
 
   packages/eslint-config:
     dependencies:
@@ -5016,6 +5016,7 @@ packages:
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
     dependencies:
       js-tokens: 4.0.0
 
