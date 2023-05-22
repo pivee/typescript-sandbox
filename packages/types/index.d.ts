@@ -4,4 +4,8 @@ export namespace Responses {
     version: string;
     environment: string;
   }
+
+  export type DataResponse<T> = {
+    data: T;
+  }
 }

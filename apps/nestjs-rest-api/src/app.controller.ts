@@ -17,7 +17,7 @@ export class AppController {
   }
 
   @Get('hello')
-  getHello(): string {
-    return `<h1>${this.appService.getHello()}</h1>`;
+  getHello(): Responses.DataResponse<string> {
+    return { data: this.appService.getHello() };
   }
 }
