@@ -37,6 +37,9 @@ importers:
       rxjs:
         specifier: ^7.2.0
         version: 7.8.1
+      types:
+        specifier: workspace:*
+        version: link:../../packages/types
     devDependencies:
       '@nestjs/cli':
         specifier: ^9.0.0
@@ -152,6 +155,21 @@ importers:
         version: 7.28.0(eslint@8.0.1)
 
   packages/tsconfig: {}
+
+  packages/types:
+    devDependencies:
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
+      eslint-config:
+        specifier: workspace:*
+        version: link:../eslint-config
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: ^4.5.2
+        version: 4.7.4
 
   packages/ui:
     devDependencies:
@@ -3318,6 +3336,7 @@ packages:
   /eslint@7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
+    hasBin: true
     dependencies:
       '@babel/code-frame': 7.12.11
       '@eslint/eslintrc': 0.4.3
@@ -4881,6 +4900,7 @@ packages:
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
+    hasBin: true
     dependencies:
       argparse: 1.0.10
       esprima: 4.0.1

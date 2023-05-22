@@ -6,7 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "export PORT=4000 && nest start --watch",
+    "dev": "pnpm ready && nest start --watch",
+    "ready": "export PORT=4000 && export NODE_ENV=local && export STAGE=development",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -25,7 +26,8 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "types": "workspace:*"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
