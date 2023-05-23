@@ -43,7 +43,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Responses.DataResponse_lt_string_gt_"
+                  "$ref": "#/components/schemas/Responses.TextResponse"
                 }
               }
             },
@@ -83,7 +83,7 @@
         ],
         "x-typia-jsDocTags": []
       },
-      "Responses.DataResponse_lt_string_gt_": {
+      "Responses.TextResponse": {
         "type": "object",
         "properties": {
           "data": {
@@ -96,6 +96,7 @@
         "required": [
           "data"
         ],
+        "description": "This is a workaround to fix the issue that\n`nestia` does not generate the right types\nwhen we use generic types in the response model.\nIt creates something like `DataResponse_lt_T_gt_`,\nwhich is not ideal even though it shows the right type\nwhen you expand the schema in Swagger UI.",
         "x-typia-jsDocTags": []
       }
     },

@@ -17,7 +17,7 @@ export class AppController {
   }
 
   @TypedRoute.Get('hello')
-  getHello(): Responses.DataResponse<string> {
+  getHello(): Responses.TextResponse {
     return { data: this.appService.getHello() };
   }
 }
