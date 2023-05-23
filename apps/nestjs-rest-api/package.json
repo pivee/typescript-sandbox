@@ -6,7 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "pnpm ready && nest start --watch",
+    "dev": "pnpm swagger && pnpm ready && nest start --watch",
+    "swagger": "pnpm nestia swagger",
     "ready": "export PORT=4000 && export NODE_ENV=local && export STAGE=development",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
