@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { TypedRoute } from '@nestia/core';
+import { Controller } from '@nestjs/common';
 import { Responses } from 'types';
 import * as app from '../package.json';
 import { AppService } from './app.service';
@@ -7,7 +8,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @TypedRoute.Get()
   ping(): Responses.PingResponse {
     return {
       name: app.name,
@@ -16,7 +17,7 @@ export class AppController {
     };
   }
 
-  @Get('hello')
+  @TypedRoute.Get('hello')
   getHello(): Responses.DataResponse<string> {
     return { data: this.appService.getHello() };
   }
