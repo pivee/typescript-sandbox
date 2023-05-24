@@ -1,0 +1,447 @@
+{
+  "openapi": "3.0.1",
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "Local Server"
+    }
+  ],
+  "info": {
+    "version": "0.0.1",
+    "title": "nestjs-rest-api",
+    "description": ""
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Responses.PingResponse"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "x-nestia-namespace": "ping",
+        "x-nestia-jsDocTags": []
+      }
+    },
+    "/hello": {
+      "get": {
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Responses.TextResponse"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "x-nestia-namespace": "hello.getHello",
+        "x-nestia-jsDocTags": []
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Users.CreateUserRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-nestia-encrypted": false
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "description": "@tag users",
+        "x-nestia-namespace": "users.create",
+        "x-nestia-jsDocTags": [
+          {
+            "name": "tag",
+            "text": [
+              {
+                "text": "users",
+                "kind": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "description": "@tag users",
+        "x-nestia-namespace": "users.findAll",
+        "x-nestia-jsDocTags": [
+          {
+            "name": "tag",
+            "text": [
+              {
+                "text": "users",
+                "kind": "text"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "description": "@tag users",
+        "x-nestia-namespace": "users.findOne",
+        "x-nestia-jsDocTags": [
+          {
+            "name": "tag",
+            "text": [
+              {
+                "text": "users",
+                "kind": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Users.UpdateUserRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-nestia-encrypted": false
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "description": "@tag users",
+        "x-nestia-namespace": "users.update",
+        "x-nestia-jsDocTags": [
+          {
+            "name": "tag",
+            "text": [
+              {
+                "text": "users",
+                "kind": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-nestia-encrypted": false
+          }
+        },
+        "description": "@tag users",
+        "x-nestia-namespace": "users.remove",
+        "x-nestia-jsDocTags": [
+          {
+            "name": "tag",
+            "text": [
+              {
+                "text": "users",
+                "kind": "text"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Responses.PingResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string"
+          },
+          "version": {
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string"
+          },
+          "environment": {
+            "x-typia-required": false,
+            "x-typia-optional": false,
+            "type": "string"
+          }
+        },
+        "nullable": false,
+        "required": [
+          "name",
+          "version"
+        ],
+        "x-typia-jsDocTags": []
+      },
+      "Responses.TextResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string"
+          }
+        },
+        "nullable": false,
+        "required": [
+          "data"
+        ],
+        "description": "This is a workaround to fix the issue that\n`nestia` does not generate the right types\nwhen we use generic types in the response model.\nIt creates something like `DataResponse_lt_T_gt_`,\nwhich is not ideal even though it shows the right type\nwhen you expand the schema in Swagger UI.",
+        "x-typia-jsDocTags": []
+      },
+      "Users.CreateUserRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "@minLength  3",
+            "x-typia-metaTags": [
+              {
+                "kind": "minLength",
+                "value": 3
+              }
+            ],
+            "x-typia-jsDocTags": [
+              {
+                "name": "minLength",
+                "text": [
+                  {
+                    "text": "3",
+                    "kind": "text"
+                  }
+                ]
+              }
+            ],
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "description": "@format email",
+            "x-typia-metaTags": [
+              {
+                "kind": "format",
+                "value": "email"
+              }
+            ],
+            "x-typia-jsDocTags": [
+              {
+                "name": "format",
+                "text": [
+                  {
+                    "text": "email",
+                    "kind": "text"
+                  }
+                ]
+              }
+            ],
+            "x-typia-required": false,
+            "x-typia-optional": true,
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "nullable": false,
+        "required": [
+          "name"
+        ],
+        "x-typia-jsDocTags": []
+      },
+      "Users.UpdateUserRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "@minLength  3",
+            "x-typia-metaTags": [
+              {
+                "kind": "minLength",
+                "value": 3
+              }
+            ],
+            "x-typia-jsDocTags": [
+              {
+                "name": "minLength",
+                "text": [
+                  {
+                    "text": "3",
+                    "kind": "text"
+                  }
+                ]
+              }
+            ],
+            "x-typia-required": false,
+            "x-typia-optional": false,
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "description": "@format email",
+            "x-typia-metaTags": [
+              {
+                "kind": "format",
+                "value": "email"
+              }
+            ],
+            "x-typia-jsDocTags": [
+              {
+                "name": "format",
+                "text": [
+                  {
+                    "text": "email",
+                    "kind": "text"
+                  }
+                ]
+              }
+            ],
+            "x-typia-required": false,
+            "x-typia-optional": true,
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "nullable": false,
+        "x-typia-jsDocTags": []
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearer": []
+    }
+  ]
+}
