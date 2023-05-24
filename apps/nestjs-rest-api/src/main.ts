@@ -18,6 +18,7 @@ async function bootstrap() {
 
     app.use('/api/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
+
   await app.listen(process.env.PORT ?? 4000, () => {
     Logger.log(
       `Running on port ${process.env.PORT ?? 4000}`,
